@@ -90,8 +90,9 @@ By default Streamlit opens at <http://localhost:8501>. Use the sidebar to naviga
 
 - **`RuntimeError: Unable to load scores_full dataset`** – confirm the parquet artifact exists or that the SQL view is reachable from the deployment environment.
 - **Module import errors** – run Streamlit from the project root so relative imports like `from load_data import ...` resolve correctly.
+- **Trendline disabled warning** – install `statsmodels` if you want the engagement scatter plot to display the OLS trendline; the app will fall back to a scatter without it when `statsmodels` is missing.
 - **Database timeouts** – verify firewall rules and that the credentials in `.env` match your PostgreSQL instance.
 
 ---
 
-Made with ❤️ by the analytics team to accelerate telecom customer experience insights.
+Made with ❤️ to accelerate telecom customer experience insights.

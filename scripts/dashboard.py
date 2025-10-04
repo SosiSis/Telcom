@@ -8,6 +8,12 @@ import seaborn as sns
 import streamlit as st
 from load_data import load_data_from_postgres, load_data_using_sqlalchemy
 
+try:
+    import statsmodels.api  # noqa: F401
+    HAS_STATSMODELS = True
+except ModuleNotFoundError:
+    HAS_STATSMODELS = False
+
 
 st.set_page_config(
     page_title="Telecom Analytics Dashboard",
@@ -161,6 +167,11 @@ def engagement_page(data: pd.DataFrame):
     st.plotly_chart(c_fig, use_container_width=True)
 
     st.markdown("### Engagement vs. Total Traffic")
+    trendline_mode = "ols" if HAS_STATSMODELS else None
+    if not HAS_STATSMODELS:
+        st.caption(
+            "Install `statsmodels` to enable the OLS trendline in this scatter plot."
+        )
     scatter_fig = px.scatter(
         data,
         x="engagement_score",
@@ -168,7 +179,7 @@ def engagement_page(data: pd.DataFrame):
         color="Engagement Cluster",
         hover_data=["MSISDN"],
         marginal_y="box",
-        trendline="ols",
+        trendline=trendline_mode,
     )
     st.plotly_chart(scatter_fig, use_container_width=True)
 
