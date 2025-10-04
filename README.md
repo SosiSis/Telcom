@@ -1,6 +1,6 @@
 # Telecom Analytics Platform
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://telcom-dashboard.streamlit.app/)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://sosisis-telcom-scriptsdashboard-ra9hlu.streamlit.app/)
 
 An end-to-end analytics workspace that unifies exploratory notebooks, data processing utilities, and a Streamlit dashboard for telecom subscriber insights. The project aggregates network usage and experience metrics into engagement, experience, and satisfaction scores to help data teams monitor customer health in real time.
 
