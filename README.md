@@ -93,6 +93,10 @@ By default Streamlit opens at <http://localhost:8501>. Use the sidebar to naviga
 - **Trendline disabled warning** – install `statsmodels` if you want the engagement scatter plot to display the OLS trendline; the app will fall back to a scatter without it when `statsmodels` is missing.
 - **Database timeouts** – verify firewall rules and that the credentials in `.env` match your PostgreSQL instance.
 
+## License
+
+Released under the [MIT License](./LICENSE).
+
 ---
 
 Made with ❤️ to accelerate telecom customer experience insights.
