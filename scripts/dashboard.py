@@ -11,7 +11,7 @@ from load_data import load_data_from_postgres, load_data_using_sqlalchemy
 try:
     import statsmodels.api  # noqa: F401
     HAS_STATSMODELS = True
-except ModuleNotFoundError:
+except (ImportError, ModuleNotFoundError):
     HAS_STATSMODELS = False
 
 
